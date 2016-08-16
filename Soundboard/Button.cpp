@@ -1,10 +1,10 @@
 #include "Button.h"
 
-Button::Button(float x, float y, string name_of_texture)
+Button::Button(float x, float y, string nameOfTexture)
 {
 
 	rectangle.setPosition(x, y);
-	buttonTexture.loadFromFile(name_of_texture);
+	buttonTexture.loadFromFile(nameOfTexture);
 	rectangle.setTexture(buttonTexture);
 }
 
