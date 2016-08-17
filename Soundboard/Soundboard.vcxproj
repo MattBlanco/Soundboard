@@ -20,10 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="Reference.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="cat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="test.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6F1CA83E-7454-4E0B-A7A1-EC900D8DBA38}</ProjectGuid>

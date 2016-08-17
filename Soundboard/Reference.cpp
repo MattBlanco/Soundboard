@@ -1,6 +1,4 @@
 ﻿#include "button.h"
-#include <string>
-using namespace std;
 
 int main()
 {
@@ -19,7 +17,7 @@ int main()
 	sf::Font font;
 	if (!font.loadFromFile("contl.ttf"))
 		return EXIT_FAILURE;
-	sf::Text text("Hello SFML", font, 50);
+	sf::Text text("Genghis Khan", font, 50);
 	// Load a music to play
 	sf::Music music;
 	if (!music.openFromFile("test.wav"))
@@ -46,7 +44,12 @@ int main()
 				{
 					if (event.mouseButton.button == sf::Mouse::Left)
 					{
-						music.play();
+						if (music.getStatus() == sf::Music::Playing) {
+							music.stop();
+						}
+						else {
+							music.play();
+						}
 					}
 				}
 			}
@@ -54,7 +57,7 @@ int main()
 				window.close();
 		}
 		// Clear screen
-		window.clear();
+		//window.clear();
 		// Draw the sprite
 		window.draw(sprite);
 		// Draw the string

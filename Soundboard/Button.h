@@ -4,7 +4,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <string>
-
+#include <iostream>
 using namespace std;
 
 class Button {
@@ -17,14 +17,15 @@ private:
 	sf::Text buttonText;
 public:
 	Button(float x, float y, string nameOfTexture);
-	void setScale(float xscale, float yscale);
-	void setButton(string music, string font, string text);
+	Button(string nameOfTexture);
+	void setButtonScale(float xscale, float yscale);
+	void moveButton(float x, float y);
+	void setButtonMusic(string music, string font, string text);
 	void playSound();
 	void stopSound();
 	sf::Text getText();
 	sf::Sprite getSprite();
-	bool insideButton();
+	void useButton(sf::RenderWindow& window, sf::Event event);
+	void drawButton(sf::RenderWindow& window);
 };
-
-
 #endif
