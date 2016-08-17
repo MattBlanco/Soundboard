@@ -1,4 +1,6 @@
-#include "button.h"
+﻿#include "button.h"
+#include <string>
+using namespace std;
 
 int main()
 {
@@ -12,6 +14,7 @@ int main()
 	if (!texture.loadFromFile("cat.jpg"))
 		return EXIT_FAILURE;
 	sf::Sprite sprite(texture);
+	sprite.setScale(0.20, 0.20);
 	// Create a graphical text to display
 	sf::Font font;
 	if (!font.loadFromFile("contl.ttf"))
@@ -19,10 +22,8 @@ int main()
 	sf::Text text("Hello SFML", font, 50);
 	// Load a music to play
 	sf::Music music;
-	if (!music.openFromFile("damnsonfrench.wav"))
+	if (!music.openFromFile("test.wav"))
 		return EXIT_FAILURE;
-	// Play the music
-	music.play();
 
 
 
@@ -36,7 +37,19 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			// Close window: exit
+			if (sf::Mouse::getPosition(window).x > sprite.getGlobalBounds().left 
+				&& sf::Mouse::getPosition(window).x < (sprite.getGlobalBounds().left + sprite.getGlobalBounds().width) 
+				&& sf::Mouse::getPosition(window).y > sprite.getGlobalBounds().top
+				&& sf::Mouse::getPosition(window).y < (sprite.getGlobalBounds().top + sprite.getGlobalBounds().height))
+			{
+               if (event.type == sf::Event::MouseButtonPressed)
+				{
+					if (event.mouseButton.button == sf::Mouse::Left)
+					{
+						music.play();
+					}
+				}
+			}
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
