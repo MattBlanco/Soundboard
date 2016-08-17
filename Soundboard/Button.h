@@ -17,12 +17,9 @@ private:
 	sf::Text buttonText;
 public:
 	Button(float x, float y, string nameOfTexture);
-	Button(string nameOfTexture);
 	void setButtonScale(float xscale, float yscale);
 	void moveButton(float x, float y);
 	void setButtonMusic(string music, string font, string text);
-	void playSound();
-	void stopSound();
 	sf::Text getText();
 	sf::Sprite getSprite();
 	void useButton(sf::RenderWindow& window, sf::Event event);

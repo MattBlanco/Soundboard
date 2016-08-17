@@ -1,6 +1,5 @@
 #include "Button.h"
 
-
 Button::Button(float x, float y, string nameOfTexture)
 {
 	buttonTexture.loadFromFile(nameOfTexture);
@@ -28,17 +27,6 @@ void Button::setButtonMusic(string music, string font, string text)
 	buttonText.setFont(buttonFont);
 	buttonText.setScale(1, 1);
 	buttonText.setString(text);
-}
-
-
-void Button::playSound()
-{
-	buttonSound.play();
-}
-
-void Button::stopSound()
-{
-	buttonSound.stop();
 }
 
 sf::Text Button::getText()
